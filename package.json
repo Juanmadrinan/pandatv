@@ -2,8 +2,9 @@
   "name": "pandatv",
   "version": "1.0.0",
   "description": "Api Rest",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,5 +14,7 @@
     "mongoose": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
