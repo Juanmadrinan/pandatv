@@ -4,7 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 // Importamos el módelo de media
-const Media = require('../models/media');
+const Media = require('../models/Media');
 
 
 // Ruta para obtener las peliculas y series
@@ -53,14 +53,13 @@ router.post('/', async (req, res) =>  {
             res.media.sinopsis = req.body.sinopsis;
         };
 
+        // Actualizamos los demás capos según sea lo necesario
         try {
             res.json(updateMedia);
         } catch (err) {
             res.status(400).json({ message: err.message });
         };
     });
-  
-
 
     // Ruta para eliminar una pelicula o serie
     router.delete('/:id', getMedia, async (req, res) => {
@@ -71,3 +70,29 @@ router.post('/', async (req, res) =>  {
             res.status(500).json({ message: err.message });
         };
     });
+
+    // Middleware para obtener una pelocula o serie por su ID
+    async function getMedia(req, res, next) {
+        let media;
+
+        try {
+            media = await Media.findById(req.params.id);
+            if(meddia == null) {
+                return res.status(400).json({ message: 'Media no encontrados' });
+            };
+        } catch (err) {
+            return res.status(500).json({ message: err.message });
+        };
+
+        res.media = media;
+        next();
+    };
+    /* Nota importante: 
+        Lo usamos para administrar la entrada y la salida de los datos 
+        requeridos desde el componente
+
+        tambien lo uamos para integrar diferentes componentes a otras
+        aplicaciones
+    */
+
+    module.exports = router;
