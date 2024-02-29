@@ -1,11 +1,13 @@
+
 const Tipo = require('../models/tipo');
 
 // Controlador para agregar un nuevo tipo
 exports.addTipo = async (req, res) => {
     try {
         const tipo = new Tipo(req.body);
-        const newTipo = await tipo.save();
-        res.status(201).json(newTipo);
+        await tipo.save();
+        res.status(201).json(tipo);
+
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
