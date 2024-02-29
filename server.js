@@ -1,14 +1,13 @@
+const app = require('./app');
+require('W:/repos/pandatv/Backend/db/db-connection-mongo.js');
 
-const express = require('express');
-const app = express();
-const port = 3000;
+async function main() {
+  await app.listen(4321);
+  console.log('Server on port 4321, Congratulations!');
+}
 
-// Ruta de ejemplo
 app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+  res.send('Hello World');
+})
 
-// Inicia el servidor
-app.listen(port, () => {
-  console.log(`Running: http://localhost:${port}`);
-});
+main();
