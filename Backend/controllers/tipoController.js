@@ -57,24 +57,17 @@ exports.updateTipo = async (req, res) => {
         console.error(error);
         res.status(500).send('Error interno del servidor');
       }
-    // try {
-    //     const { id } = req.params;
-    //     const updatedTipo = await Tipo.findByIdAndUpdate(id, req.body, { new: true });
 
-    //     if (!updatedTipo) {
-    //         return res.status(404).json({ message: 'Tipo not found' });
-    //     }
-    //     res.json(updatedTipo);
-    // } catch (err) {
-    //     res.status(400).json({ message: err.message });
-    // }
 };
 
 // Controlador para eliminar un tipo por su ID
 exports.deleteTipo = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedTipo = await Tipo.findByIdAndDelete(id);
+        const Name = req.body.Nombre;
+        const deletedTipo = await Tipo.findOneAndDelete(
+            { Nombre: Name },
+            { new: true }
+        );
         if (!deletedTipo) {
             return res.status(404).json({ message: 'Tipo not found' });
         }
