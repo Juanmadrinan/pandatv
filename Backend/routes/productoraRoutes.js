@@ -41,9 +41,6 @@ router.patch('/:id', getProductora, async (req, res) => {
     if (req.body.Nombre != null) {
         res.productora.Nombre = req.body.Nombre;
     }
-    if (req.body.Slogan != null) {
-        res.productora.Slogan = req.body.Slogan;
-    }
     if (req.body.Descripcion != null) {
         res.productora.Descripcion = req.body.Descripcion;
     }
