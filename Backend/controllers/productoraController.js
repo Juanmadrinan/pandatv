@@ -4,8 +4,8 @@ const Productora = require('../models/productora');
 exports.addProductora = async (req, res) => {
     try {
         const productora = new Productora(req.body);
-        const newProductora = await productora.save();
-        res.status(201).json(newProductora);
+        await productora.save();
+        res.status(201).json(productora);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -37,22 +37,33 @@ exports.getProductoraById = async (req, res) => {
 // Controlador para actualizar una productora por su ID
 exports.updateProductora = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedProductora = await Productora.findByIdAndUpdate(id, req.body, { new: true });
-        if (!updatedProductora) {
-            return res.status(404).json({ message: 'Productora not found' });
+        const nombreProductora = req.body.Nombre;
+        const updateData = req.body;
+        // Realizar la actualización parcial
+        const updateProductora = await Productora.findOneAndUpdate(
+          { Nombre: nombreProductora },
+          { $set: updateData },
+          { new: true }
+        );
+    
+        if (!updateProductora) {
+          return res.status(404).json({ error: 'Tipo no encontrado' });
         }
-        res.json(updatedProductora);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.json(updateProductora);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
     }
 };
 
 // Controlador para eliminar una productora por su ID
 exports.deleteProductora = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedProductora = await Productora.findByIdAndDelete(id);
+        const Name = req.body.Nombre;
+        const deletedProductora = await Productora.findOneAndDelete(
+            { Nombre: Name },
+            { new: true }
+        );
         if (!deletedProductora) {
             return res.status(404).json({ message: 'Productora not found' });
         }
