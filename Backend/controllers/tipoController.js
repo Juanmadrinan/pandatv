@@ -57,7 +57,6 @@ exports.updateTipo = async (req, res) => {
         console.error(error);
         res.status(500).send('Error interno del servidor');
       }
-
 };
 
 // Controlador para eliminar un tipo por su ID
