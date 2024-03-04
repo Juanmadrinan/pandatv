@@ -3,30 +3,9 @@ const Media = require('../models/Media');
 // Controlador para agregar una nueva película o serie
 exports.addMedia = async (req, res) => {
     try {
-        const {
-            title,
-            synopsis,
-            url,
-            coverImage,
-            releaseYear,
-            mainGenre,
-            mainDirector,
-            productionCompany,
-            type
-        } = req.body;
-        const newMedia = new Media({
-            title,
-            synopsis,
-            url,
-            coverImage,
-            releaseYear,
-            mainGenre,
-            mainDirector,
-            productionCompany,
-            type
-        });
-        const savedMedia = await newMedia.save();
-        res.status(201).json(savedMedia);
+        const media = new Media(req.body);
+        await media.save();
+        res.status(201).json(media);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -35,8 +14,13 @@ exports.addMedia = async (req, res) => {
 // Controlador para actualizar una película o serie por su ID
 exports.updateMedia = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedMedia = await Media.findByIdAndUpdate(id, req.body, { new: true });
+        const Name = req.body.Nombre;
+        const updatedDate = req.body;
+        const updatedMedia = await Media.findOneAndUpdate(
+            {Nombre: Name},
+            {$set: updatedDate},
+            {new: true}
+            );
         if (!updatedMedia) {
             return res.status(404).json({ message: 'Media not found' });
         }
@@ -47,10 +31,10 @@ exports.updateMedia = async (req, res) => {
 };
 
 // Controlador para obtener una película o serie por su ID
-exports.getMediaById = async (req, res) => {
+exports.getAllMedia = async (req, res) => {
     try {
-        const { id } = req.params;
-        const media = await Media.findById(id);
+        const media = await Media.find();
+        res.json(media);
         if (!media) {
             return res.status(404).json({ message: 'Media not found' });
         }
@@ -63,8 +47,10 @@ exports.getMediaById = async (req, res) => {
 // Controlador para eliminar una película o serie por su ID
 exports.deleteMedia = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedMedia = await Media.findByIdAndDelete(id);
+        const Name = req.body.Nombre;
+        const deletedMedia = await Media.findOneAndDelete(
+            {Nombre: Name}
+        );
         if (!deletedMedia) {
             return res.status(404).json({ message: 'Media not found' });
         }
