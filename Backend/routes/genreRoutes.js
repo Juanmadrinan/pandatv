@@ -13,4 +13,3 @@ router.delete('/id:', genreController.deleteGenre);
 
 // Exportamos el enrutador para usarlo en otra parte de la app
 module.exports = router;
-

@@ -12,6 +12,16 @@ exports.addDirector = async (req, res) => {
     }
 };
 
+// Controlador para obtener todos los directores.
+exports.getAllDirectors = async (req, res) => {
+    try {
+        const directors = await Director.find();
+        res.json(directors);
+    } catch (err) {
+        res.status(500).json( { message: err.message });
+    };
+};
+
 // Controlador para actualizar un director por su ID
 exports.updateDirector = async (req, res) => {
     try {
