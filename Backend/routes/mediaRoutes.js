@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mediaRoutes = require('../controllers/mediaController');
+const mediaController = require('../controllers/mediaController');
 
-router.get('/', mediaRoutes.getAllMedia);
-router.post('/', mediaRoutes.addMedia);
-router.patch('/', mediaRoutes.updateMedia);
-router.delete('/', mediaRoutes.deleteMedia);
+router.get('/', mediaController.getAllMedia);
+router.post('/', mediaController.addMedia);
+router.patch('/', mediaController.updateMedia);
+router.delete('/', mediaController.deleteMedia);
 
 module.exports = router;

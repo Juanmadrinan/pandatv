@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 // Definimos el esquema para el modelo director
 const directorSchema = new mongoose.Schema({
     // Nombres del director (El campo es requerido)
-    Nombres: {
-        typeof: String,
-        required: true
+    Nombre: {
+        type: String,
+
     },
     Estado: {
         type: String,

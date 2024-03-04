@@ -3,10 +3,9 @@ const Director = require('../models/director');
 // Controlador para agregar un nuevo director
 exports.addDirector = async (req, res) => {
     try {
-        const { name } = req.body;
-        const newDirector = new Director({ name });
-        const savedDirector = await newDirector.save();
-        res.status(201).json(savedDirector);
+        const director = new Director(req.body);
+        await director.save();
+        res.status(201).json(director);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -25,8 +24,13 @@ exports.getAllDirectors = async (req, res) => {
 // Controlador para actualizar un director por su ID
 exports.updateDirector = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedDirector = await Director.findByIdAndUpdate(id, req.body, { new: true });
+        const Name = req.body.Nombre;
+        const updatedData = req.body;
+        const  updatedDirector = await Director.findOneAndUpdate(
+            {Nombre: Name},
+            {$set: updatedData},
+            {new: true}
+        );
         if (!updatedDirector) {
             return res.status(404).json({ message: 'Director not found' });
         }
@@ -53,8 +57,11 @@ exports.getDirectorById = async (req, res) => {
 // Controlador para eliminar un director por su ID
 exports.deleteDirector = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedDirector = await Director.findByIdAndDelete(id);
+        const Name = req.body.Nombre;
+        const deletedDirector = await Director.findOneAndDelete(
+            {Nombre: Name},
+            {new: true}
+        );
         if (!deletedDirector) {
             return res.status(404).json({ message: 'Director not found' });
         }
