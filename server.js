@@ -4,6 +4,8 @@ const tipoRoutes = require('./Backend/routes/tipoRoutes');
 const productoraRoutes = require('./Backend/routes/productoraRoutes');
 const genreRoutes = require('./Backend/routes/genreController');
 const directorRoutes = require('./Backend/routes/directorRoutes');
+const genreRoutes = require('./Backend/routes/genreRoutes');
+
 
 async function main() {
   await app.listen(4321);
