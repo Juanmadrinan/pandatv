@@ -10,7 +10,7 @@ async function main() {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hola mundo!!!!!');
 })
 
 app.use('/api/tipo', tipoRoutes);
