@@ -1,7 +1,6 @@
 // Requerimos las librerias
 const express = require('express');
 const router = express.Router();
-const Tipo = require('../models/tipo');
 const tipoController = require('../controllers/tipoController');
 
 router.get('/', tipoController.getAllTipos);

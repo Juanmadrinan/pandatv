@@ -5,9 +5,8 @@ const mongoose = require('mongoose');
 const genreSchema = new mongoose.Schema({
     // Nombre del género (campo requerido y único)
     Nombre: {
-        type: String,
-        required: true,
-        unique: true
+        type: String
+
     },
     // Estado del género (Activo o Inactivo, con valor por defecto Activo)
     Estado: {

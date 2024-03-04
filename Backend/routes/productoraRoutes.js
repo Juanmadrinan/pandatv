@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Productora = require('../models/productora');
 const productoraController = require('../controllers/productoraController');
 
 router.get('/', productoraController.getAllProductoras);

@@ -3,10 +3,10 @@ const Genre = require('../models/genre');
 // Controlador para agregar un nuevo género
 exports.addGenre = async (req, res) => {
     try {
-        const { name } = req.body;
-        const newGenre = new Genre({ name });
-        const savedGenre = await newGenre.save();
-        res.status(201).json(savedGenre);
+        const Name = req.body;
+        const newGenre = new Genre(Name);
+        await newGenre.save();
+        res.status(201).json(newGenre);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -15,8 +15,13 @@ exports.addGenre = async (req, res) => {
 // Controlador para actualizar un género por su ID
 exports.updateGenre = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedGenre = await Genre.findByIdAndUpdate(id, req.body, { new: true });
+        const Name = req.body.Nombre;
+        const updateData = req.body;
+        const updatedGenre = await Genre.findOneAndUpdate(
+            {Nombre: Name}, 
+            {$set: updateData}, 
+            { new: true }
+            );
         if (!updatedGenre) {
             return res.status(404).json({ message: 'Genre not found' });
         }
@@ -25,6 +30,17 @@ exports.updateGenre = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
+// Controlador para obtener todas las productoras
+exports.getAllGenres = async (req, res) => {
+    try {
+        const genres = await Genre.find();
+        res.json(genres);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
 
 // Controlador para obtener un género por su ID
 exports.getGenreById = async (req, res) => {
@@ -43,12 +59,15 @@ exports.getGenreById = async (req, res) => {
 // Controlador para eliminar un género por su ID
 exports.deleteGenre = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedGenre = await Genre.findByIdAndDelete(id);
+        const Nombre = req.body.Nombre;
+        const deletedGenre = await Genre.findOneAndDelete(
+            {Nombre: Nombre},
+            { new: true }
+            );
         if (!deletedGenre) {
-            return res.status(404).json({ message: 'Genre not found' });
+            return res.status(404).json({ message: 'Genero no encontrado' });
         }
-        res.json({ message: 'Genre deleted' });
+        res.json({ message: 'Genero deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
