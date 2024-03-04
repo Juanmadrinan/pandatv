@@ -21,7 +21,7 @@ const genreSchema = new mongoose.Schema({
         default: Date.now
     },
     // Fecha de última actualización del género (se actualiza automáticamente cuando se modifica)
-    fechaActualizacion: {
+    FechaActualizacion: {
         type: Date,
         default: Date.now
     },

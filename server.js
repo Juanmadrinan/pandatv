@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
 
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);
-
+app.use('/api/genre', genreRoutes);
 main();

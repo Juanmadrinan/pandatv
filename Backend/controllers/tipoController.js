@@ -1,4 +1,3 @@
-
 const Tipo = require('../models/tipo');
 
 // Controlador para agregar un nuevo tipo
@@ -68,9 +67,9 @@ exports.deleteTipo = async (req, res) => {
             { new: true }
         );
         if (!deletedTipo) {
-            return res.status(404).json({ message: 'Tipo not found' });
+            return res.status(404).json({ message: 'Tipo no encontrado' });
         }
-        res.json({ message: 'Tipo deleted' });
+        res.json({ message: 'Tipo eliminado' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
