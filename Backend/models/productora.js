@@ -3,31 +3,31 @@ const mongoose = require('mongoose');
 // Definición del esquema para el modelo de productora
 const productoraSchema = new mongoose.Schema({
     // Nombre de la productora 
-    Nombre: {
-        type: String,
-        required: true,
-        unique: true
+    nombre: {
+        type: String
+
     },
     // Estado de la productora 
-    Estado: {
+    estado: {
         type: String,
         enum: ['Activo', 'Inactivo'],
         default: 'Activo'
     },
     // Fecha de creación de la productora 
-    FechaCreacion: {
+    fechaCreacion: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        // unique: true
     },
     // Fecha de última actualización de la productora 
-    FechaActualizacion: {
+    fechaActualizacion: {
         type: Date,
         default: Date.now
     },
     // Slogan opcional de la productora
-    Slogan: String,
+    slogan: String,
     // Descripción opcional de la productora
-    Descripcion: String
+    descripcion: String
 });
 
 // Exportamos el modelo de productora basado en el esquema definido

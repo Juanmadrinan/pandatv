@@ -4,22 +4,21 @@ const mongoose = require('mongoose');
 // Definimos el esquema del modelo tipo
 const tipoSchema = new mongoose.Schema({
     // Nombre del tipo
-    Nombre: {
+    nombre: {
         type: String,
+        required: true,
     },
     // Fecha de creación del tipo
-    FechaCreacion: {
-        type: Number,
-        default: Number.now
+    descripcion: String,
+    fechaCreacion: {
+        type: Date,
+        default: Date.now,
     },
-    // Fecha de ultima actualización del tipo
-    FechaActualizacion: {
-        type: Number,
-        default: Number.now
+    fechaActualizacion: {
+        type: Date,
+        default: Date.now,
     },
-    Descripcion: String
 });
-
 
 // Exportamos el modelo de tipo basado en el esquema definido anteriormente
 module.exports = mongoose.model('Tipo', tipoSchema);

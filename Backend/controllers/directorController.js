@@ -24,10 +24,10 @@ exports.getAllDirectors = async (req, res) => {
 // Controlador para actualizar un director por su ID
 exports.updateDirector = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idByDirector = req.params.id;
         const updatedData = req.body;
-        const  updatedDirector = await Director.findOneAndUpdate(
-            {Nombre: Name},
+        const  updatedDirector = await Director.findByIdAndUpdate(
+            {_id: idByDirector},
             {$set: updatedData},
             {new: true}
         );
@@ -43,7 +43,7 @@ exports.updateDirector = async (req, res) => {
 // Controlador para obtener un director por su ID
 exports.getDirectorById = async (req, res) => {
     try {
-        const { id } = req.params;
+        const id = req.params.id;
         const director = await Director.findById(id);
         if (!director) {
             return res.status(404).json({ message: 'Director not found' });
@@ -57,9 +57,9 @@ exports.getDirectorById = async (req, res) => {
 // Controlador para eliminar un director por su ID
 exports.deleteDirector = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idByDirector = req.params.id;
         const deletedDirector = await Director.findOneAndDelete(
-            {Nombre: Name},
+            {_id: idByDirector},
             {new: true}
         );
         if (!deletedDirector) {

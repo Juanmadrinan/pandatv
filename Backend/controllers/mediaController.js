@@ -14,10 +14,10 @@ exports.addMedia = async (req, res) => {
 // Controlador para actualizar una película o serie por su ID
 exports.updateMedia = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idMedia = req.params.id;
         const updatedDate = req.body;
-        const updatedMedia = await Media.findOneAndUpdate(
-            {Nombre: Name},
+        const updatedMedia = await Media.findByIdAndUpdate(
+            {_id: idMedia},
             {$set: updatedDate},
             {new: true}
             );
@@ -35,18 +35,31 @@ exports.getAllMedia = async (req, res) => {
     try {
         const media = await Media.find();
         res.json(media);
-        console.log(media);
+
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
 
+exports.getIdMedia = async (req, res) => {
+    try {
+        const media = await Media.findById(req.params.id);
+        if (!media) {
+            return res.status(404).json({ message: 'Productora not found' });
+        }
+        res.json(media);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+
 // Controlador para eliminar una película o serie por su ID
 exports.deleteMedia = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idMedia = req.params.id;
         const deletedMedia = await Media.findOneAndDelete(
-            {Nombre: Name}
+            {_id: idMedia},
+            {new: true}
         );
         if (!deletedMedia) {
             return res.status(404).json({ message: 'Media not found' });

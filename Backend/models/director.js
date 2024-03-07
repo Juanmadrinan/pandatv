@@ -3,22 +3,22 @@ const mongoose = require('mongoose');
 // Definimos el esquema para el modelo director
 const directorSchema = new mongoose.Schema({
     // Nombres del director (El campo es requerido)
-    Nombre: {
+    nombre: {
         type: String,
 
     },
-    Estado: {
+    estado: {
         type: String,
         enum: ['Activo', 'Inactivo'],
         default: 'Activo'
     },
     // Fecha de creacion del director
-    FechaCreacion: {
+    fechaCreacion: {
         type: Date,
         default: Date.now
     },
     // Fecha de última actualización del director
-    FechaActualizacion: {
+    fechaActualizacion: {
         type: Date,
         default: Date.now
     }

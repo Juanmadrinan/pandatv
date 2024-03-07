@@ -37,11 +37,11 @@ exports.getProductoraById = async (req, res) => {
 // Controlador para actualizar una productora por su ID
 exports.updateProductora = async (req, res) => {
     try {
-        const nombreProductora = req.body.Nombre;
+        const idProductora = req.params.id;
         const updateData = req.body;
         // Realizar la actualización parcial
-        const updateProductora = await Productora.findOneAndUpdate(
-          { Nombre: nombreProductora },
+        const updateProductora = await Productora.findByIdAndUpdate(
+          { _id: idProductora },
           { $set: updateData },
           { new: true }
         );
@@ -59,9 +59,9 @@ exports.updateProductora = async (req, res) => {
 // Controlador para eliminar una productora por su ID
 exports.deleteProductora = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idProductora = req.params.id;
         const deletedProductora = await Productora.findOneAndDelete(
-            { Nombre: Name },
+            { _id: idProductora },
             { new: true }
         );
         if (!deletedProductora) {

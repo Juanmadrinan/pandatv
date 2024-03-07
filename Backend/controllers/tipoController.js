@@ -38,11 +38,11 @@ exports.getTipoById = async (req, res) => {
 // Controlador para actualizar un tipo por su ID
 exports.updateTipo = async (req, res) => {
     try {
-        const nombreTipo = req.body.Nombre;
+        const idTipo = req.params.id;
         const updateData = req.body;
         // Realizar la actualización parcial
-        const updatedTipo = await Tipo.findOneAndUpdate(
-          { Nombre: nombreTipo },
+        const updatedTipo = await Tipo.findByIdAndUpdate(
+          { _id: idTipo },
           { $set: updateData },
           { new: true }
         );
@@ -61,9 +61,9 @@ exports.updateTipo = async (req, res) => {
 // Controlador para eliminar un tipo por su ID
 exports.deleteTipo = async (req, res) => {
     try {
-        const Name = req.body.Nombre;
+        const idTipo = req.params.id;
         const deletedTipo = await Tipo.findOneAndDelete(
-            { Nombre: Name },
+            { _id: idTipo },
             { new: true }
         );
         if (!deletedTipo) {

@@ -1,5 +1,5 @@
 const app = require('./app');
-require('W:/repos/pandatv/Backend/db/db-connection-mongo.js');
+require('./Backend/db/db-connection-mongo');
 const tipoRoutes = require('./Backend/routes/tipoRoutes');
 const mediaRoutes = require('./Backend/routes/mediaRoutes');
 const productoraRoutes = require('./Backend/routes/productoraRoutes');
