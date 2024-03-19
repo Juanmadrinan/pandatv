@@ -1,10 +1,10 @@
 const app = require('./app');
-require('./Backend/db/db-connection-mongo');
-const tipoRoutes = require('./Backend/routes/tipoRoutes');
-const mediaRoutes = require('./Backend/routes/mediaRoutes');
-const productoraRoutes = require('./Backend/routes/productoraRoutes');
-const genreRoutes = require('./Backend/routes/genreRoutes');
-const directorRoutes = require('./Backend/routes/directorRoutes');
+require('./db/db-connection-mongo');
+const tipoRoutes = require('./routes/tipoRoutes');
+const mediaRoutes = require('./routes/mediaRoutes');
+const productoraRoutes = require('./routes/productoraRoutes');
+const genreRoutes = require('./routes/genreRoutes');
+const directorRoutes = require('./routes/directorRoutes');
 
 async function main() {
   await app.listen(4321);
