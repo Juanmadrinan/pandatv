@@ -1,9 +1,12 @@
 import './App.css';
+import React from 'react';
+import Navbar from './components/navbar';
 
 function App() {
   return (
     <div>
-      Hola Mundo en react
+      <Navbar />
+
     </div>
   );
 }
