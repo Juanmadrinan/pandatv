@@ -8,7 +8,7 @@ const tipoSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // Fecha de creación del tipo
+    // Fecha de creación del tipos
     descripcion: String,
     fechaCreacion: {
         type: Date,
