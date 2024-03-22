@@ -1,0 +1,23 @@
+.divHeader{
+  width: 100vw;
+  height:20vh;
+  background-color: blueviolet;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.ulNavbar{
+  margin: 0;
+  padding: 0;
+}
+
+.ulNavbar li{
+  background-color: violet;
+  display: inline-block;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.divUl{
+  width: 100vw;
+}
