@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 
 const URI = 'mongodb://localhost:27017/pandatv';
 
-mongoose.connect(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(URI);
 
 const connection = mongoose.connection;
 
