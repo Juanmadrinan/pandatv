@@ -10,8 +10,6 @@ function App() {
         <div><Header/></div>
       </div>
     </div>
-
-
   );
 }
 
