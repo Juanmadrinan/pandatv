@@ -17,7 +17,7 @@ function Navbar() {
                         </summary>
                         <ul class="cajaUlAdministrador">
                             <li>
-                                <a href="/" class="">Añadir Pelicula</a>
+                                <a href="/" class="">Añadir</a>
                             </li>
                             <li>
                                 <a href="/" class="">Actualizar Pelicula</a>
