@@ -1,7 +1,7 @@
 .divHeader{
-  width: 100vw;
-  height:20vh;
-  background-color: blueviolet;
+  width: 75vw;
+  height:10vh;
+  background-color: #1c1c1c;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -12,12 +12,36 @@
 }
 
 .ulNavbar li{
-  background-color: violet;
+  background-color: rgba(31, 42, 75, 0);
   display: inline-block;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  text-align: center;
+  line-height: 35px;
+  width: 85px;
+  height: 35px;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  border: 1px solid #0890f8;
+  border-radius: 30px;
+
 }
 
 .divUl{
   width: 100vw;
+}
+
+
+.divSearch li{
+  display: flex;
+  justify-content:left;
+  align-items:end;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #1f2a4b;
+  cursor: pointer; ;
+}
+
+
+ul li a{
+  text-decoration: none;
+  color: #d6dcf1;
 }

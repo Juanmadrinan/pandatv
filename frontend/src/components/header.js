@@ -11,10 +11,12 @@ function Header(){
                     <li><a href="#series">Series</a></li>
                     <li><a href="#animes">Animes</a></li>
                     <li><a href="#registro">Registro</a></li>
-                    <li><a href="#buscarPelis">Buscar Pelis</a></li>
                 </ul>
             </div>
-       </div>
+                <div class="divSearch">
+                    <li><a href="#buscarPelis">Buscar Pelis</a></li>
+                </div>                  
+        </div>
     )
 }
 

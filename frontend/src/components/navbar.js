@@ -9,50 +9,83 @@ function Navbar() {
             <div class="divLogo">
                 <img src={Logo} alt="logo"></img>
             </div>
-           
             <div>
                 <div>
-                    <label for="Género">Generos:</label>
-                        <select name="Generos" id="Generos">
-                            <option value="drama">Drama</option>
-                            <option value="terror">Terror</option>
-                            <option value="comedia">Comedia</option>
-                            <option value="romance">Romance</option>
-                            <option value="aventura">Aventura</option>
-                            <option value="cienciaFiccion">Ciencia Ficcion</option>
-                            <option value="animacion">Animacion</option>
-                            <option value="accion">Accion</option>
-                            <option value="crimen">Crimen</option>
-                            <option value="familia">Familia</option>
-                            <option value="musica">Musica</option>
-                            <option value="misterio">Misterio</option>
-                            <option value="suspenso">Suspenso</option>
-                            <option value="documental">Documental</option>
-                            <option value="fantasia">Fantasia</option>
-                        </select>
+                    <details class="relative" onmouseover="this.open=true" onmouseout="this.open=false">
+                        <summary class="">
+                            <a class="tituloLink" href="/">Genero</a>
+                        </summary>
+                        <ul class="cajaUl">
+                            <li>
+                                <a href="/" class="">Drama</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Terror</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Comedia</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Romance</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Aventura</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Ciencia Ficcion</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Animacion</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Accion</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Crimen</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Familia</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Musica</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Misterio</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Suspenso</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Documental</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Fantasia</a>
+                            </li>
+                        </ul>
+                    </details>
                 </div>
-
                 <div>
-                <label for="localMovies">Peliculas Locales:</label>
-                    <select name="localMovies" id="localMovies">
-                        <option value="ultimas">Ultimas</option>
-                        <option value="mejores">Mejores</option>
-                        <option value="proximas">Proximas</option>
-                        <option value="populares">Populares</option>          
-                    </select>
-                </div>
-               
-                <div>
-                    <label for="series">Series:</label>
-                    <select name="Series" id="Series">
-                        <option value="popular">Popular</option>
-                        <option value="tvShows">TV Shows</option>
-                        <option value="mejores">Mejores</option>
-                        <option value="ultimas">Ultimas</option>  
-                    </select>
+                    <details class="relative" onmouseover="this.open=true" onmouseout="this.open=false">
+                        <summary class="">
+                            <a class="tituloLink" href="/">Series</a>
+                        </summary>
+                        <ul class="cajaUl">
+                            <li>
+                                <a href="/" class="">Popular</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">TV Shows</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Mejores</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Ultimas</a>
+                            </li>
+                        </ul>
+                    </details>
                 </div>
             </div>
-            
         </nav>
     </div> 
   )
