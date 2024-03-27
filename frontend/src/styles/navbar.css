@@ -1,6 +1,6 @@
 .divNavbar{
-    background-color: #141a32;
-    width: 30vw;
+    background-color: #19181b;
+    width: 25vw;
     height: 100vh;
     display: flex;
 }
@@ -17,6 +17,42 @@
     height: auto;
 }
 
+.tituloLink {
+    color: #d6dcf1;
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.cajaUl{
+    border-radius: 10px;
+    border: 1px solid #0890f8;
+    background-color: #19181b;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.cajaUl li a{
+    color: #d6dcf1;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+
+}
+
 nav{
     width: 100vw;
 }
+
+details{
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+summary{
+    list-style: none;
+    text-align: center;
+}
+
+
