@@ -1,0 +1,12 @@
+.divFormulario{
+    display: block;
+    box-sizing: border-box;
+    width: 800px;
+    height: 500px;
+    background-color: #1c1c1c;
+    margin: auto;
+    border: 10px solid #d6dcf1;
+    border-radius: 10px;
+    padding: 20px;
+    color: #d6dcf1;
+}
