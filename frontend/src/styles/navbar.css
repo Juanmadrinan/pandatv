@@ -40,17 +40,33 @@
 
 }
 
-nav{
+.cajaUlAdministrador{
+    border-radius: 10px;
+    border: 1px solid #0890f8;
+    background-color: #19181b;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.cajaUlAdministrador li a{
+    color: #d6dcf1;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.navBar{
     width: 100vw;
 }
 
-details{
+.details{
     padding: 10px;
     margin: 10px;
     cursor: pointer;
 }
 
-summary{
+.summary{
     list-style: none;
     text-align: center;
 }
