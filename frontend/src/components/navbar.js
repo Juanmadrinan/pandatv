@@ -5,14 +5,32 @@ import Logo from "../img/logo.png"
 function Navbar() {
   return (
     <div class="divNavbar">
-        <nav>
+        <nav class="navBar">
             <div class="divLogo">
                 <img src={Logo} alt="logo"></img>
             </div>
             <div>
                 <div>
-                    <details class="relative" onmouseover="this.open=true" onmouseout="this.open=false">
-                        <summary class="">
+                    <details class="details" onmouseover="this.open=true" onmouseout="this.open=false">
+                        <summary class="summary">
+                            <a class="tituloLink" href="/">Administrador</a>
+                        </summary>
+                        <ul class="cajaUlAdministrador">
+                            <li>
+                                <a href="/" class="">Añadir Pelicula</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Actualizar Pelicula</a>
+                            </li>
+                            <li>
+                                <a href="/" class="">Borrar Pelicula</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div>
+                    <details class="details" onmouseover="this.open=true" onmouseout="this.open=false">
+                        <summary class="summary">
                             <a class="tituloLink" href="/">Genero</a>
                         </summary>
                         <ul class="cajaUl">
@@ -65,8 +83,8 @@ function Navbar() {
                     </details>
                 </div>
                 <div>
-                    <details class="relative" onmouseover="this.open=true" onmouseout="this.open=false">
-                        <summary class="">
+                    <details class="details" onmouseover="this.open=true" onmouseout="this.open=false">
+                        <summary class="summary">
                             <a class="tituloLink" href="/">Series</a>
                         </summary>
                         <ul class="cajaUl">

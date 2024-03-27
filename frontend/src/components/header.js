@@ -7,10 +7,8 @@ function Header(){
             <div class="divUl">
                 <ul class="ulNavbar">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#estrenos">Estrenos</a></li>
+                    <li><a href="#peliculas">Peliculas</a></li>
                     <li><a href="#series">Series</a></li>
-                    <li><a href="#animes">Animes</a></li>
-                    <li><a href="#registro">Registro</a></li>
                 </ul>
             </div>
                 <div class="divSearch">
