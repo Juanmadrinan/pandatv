@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/formulario.css';
-import FormMedia from './forms/formMedia';
+// import FormMedia from './forms/formMedia';
 
-function Formulario({FormMedia}){
+function Formulario(){
     return(
         <React.Fragment>
             <div className='divFormulario'>
@@ -17,7 +17,6 @@ function Formulario({FormMedia}){
                         <option value="tipo">Tipo</option>
                     </select>
                 </form>
-                <FormMedia/> 
             </div>
         </React.Fragment>
     )
