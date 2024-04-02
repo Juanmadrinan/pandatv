@@ -64,11 +64,13 @@
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .summary{
     list-style: none;
     text-align: center;
+    text-decoration: none;
 }
 
 

@@ -1,8 +1,9 @@
-import './styles/App.css';
-import Navbar from './components/navbar';
-import Header from './components/header';
+import './styles/App.css'
+import Navbar from './components/navbar.jsx'
+import Header from './components/header.jsx'
 
 function App() {
+
   return (
     <div className="App">
       <div class="principal">
@@ -10,7 +11,5 @@ function App() {
         <div><Header/></div>
       </div>
     </div>
-  );
-}
-
-export default App;
+  )}
+export default App
