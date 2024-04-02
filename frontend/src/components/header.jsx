@@ -11,9 +11,9 @@ function Header(){
                     <li><a href="#series">Series</a></li>
                 </ul>
             </div>
-                <div class="divSearch">
-                    <li><a href="#buscarPelis">Buscar Pelis</a></li>
-                </div>                  
+            <div class="divSearch">
+                <li><a href="#buscarPelis">Buscar Pelis</a></li>
+            </div>                  
         </div>
     )
 }

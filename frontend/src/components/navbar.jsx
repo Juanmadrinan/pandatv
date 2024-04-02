@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/navbar.css'
 import Logo from "../assets/images/logo.png"
 
-function Navbar() {
+export function Navbar() {
   return (
     <div class="divNavbar">
         <nav class="navBar">
@@ -17,13 +17,13 @@ function Navbar() {
                         </summary>
                         <ul class="cajaUlAdministrador">
                             <li>
-                                <a href="/" class="">Añadir Pelicula</a>
+                                <a href="/" class="">Añadir</a>
                             </li>
                             <li>
-                                <a href="/" class="">Actualizar Pelicula</a>
+                                <a href="/" class="">Actualizar</a>
                             </li>
                             <li>
-                                <a href="/" class="">Borrar Pelicula</a>
+                                <a href="/" class="">Borrar</a>
                             </li>
                         </ul>
                     </details>
@@ -108,5 +108,3 @@ function Navbar() {
     </div> 
   )
 }
-
-export default Navbar;
