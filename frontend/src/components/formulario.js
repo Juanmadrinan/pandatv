@@ -6,7 +6,7 @@ function Formulario(){
     return(
         <React.Fragment>
             <div className='divFormulario'>
-               <h1>Anadir Nueva Peli</h1>
+               <h1>Anadir Modulo</h1>
                 <form action="/submit-form" method="post">
                     <label for="opciones">Escoge el modulo:</label>
                     <select className='selectFormulario' name="opciones" id="opciones">

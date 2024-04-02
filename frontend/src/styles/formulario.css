@@ -1,3 +1,5 @@
+
+
 .divFormulario{
     display: block;
     box-sizing: border-box;
@@ -9,7 +11,7 @@
     border-radius: 10px;
     padding: 20px;
     color: #d6dcf1;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .selectFormulario {
@@ -19,7 +21,7 @@
     border-radius: 10px;
     background-color: #1f2a4b;
     color: #d6dcf1;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -28,11 +30,10 @@
     height: 40px;
     background-color: #1f2a4b;
     color: #d6dcf1;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
 h1{
-    font-family: 'Monserrat', sans-serif;
-    
+    font-family: 'Poppins', sans-serif;
 }
