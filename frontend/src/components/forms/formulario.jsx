@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/formulario.css';
 // import FormMedia from './forms/formMedia';
 
-function Formulario(){
+export default function Formulario(){
     return(
         <React.Fragment>
             <div className='divFormulario'>
@@ -21,5 +21,3 @@ function Formulario(){
         </React.Fragment>
     )
 }
-
-export default Formulario;

@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/navbar.css'
 import Logo from "../assets/images/logo.png"
+import '../styles/navbar.css'
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <div class="divNavbar">
         <nav class="navBar">

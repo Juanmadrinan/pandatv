@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/header.css";
 
-function Header(){ 
+export default function Header(){ 
     return(
        <div class="divHeader">
             <div class="divUl">
@@ -17,5 +17,3 @@ function Header(){
         </div>
     )
 }
-
-export default Header;

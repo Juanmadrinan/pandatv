@@ -1,13 +1,8 @@
-<<<<<<< HEAD:frontendpandatv/src/App.jsx
-import './styles/App.css'
-import Navbar from './components/navbar.jsx'
-import Header from './components/header.jsx'
-=======
-import './styles/App.css';
 import Navbar from './components/navbar';
 import Header from './components/header';
-import Formulario from './components/formulario';
->>>>>>> main:frontend/src/App.js
+import Formulario from './components/forms/formulario';
+import './styles/App.css';
+
 
 function App() {
 
