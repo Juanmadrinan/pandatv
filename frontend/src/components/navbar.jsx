@@ -1,8 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import Logo from "../assets/images/logo.png"
 import '../styles/navbar.css'
+import Formulario from './formsAnadir/formulario'
 
 export default function Navbar() {
+    const [mostrarComponente, setMostrarComponente] = useState(false);
+
+  const handleMostrarComponente = () => {
+    setMostrarComponente(true);
+  };
   return (
     <div class="divNavbar">
         <nav class="navBar">
@@ -16,11 +23,22 @@ export default function Navbar() {
                             <a class="tituloLink" href="/">Administrador</a>
                         </summary>
                         <ul class="cajaUlAdministrador">
-                            <li>
-                                <a href="/" class="">Añadir</a>
+                            <li>                               
+                                    <div class="button- add">
+                                        {mostrarComponente ? (
+                                            <Formulario /> // El componente se muestra si mostrarComponente es true
+                                            ) : 
+                                            (                                           
+                                                <button onClick={handleMostrarComponente}>
+                                                  Anadir
+                                                </button> // Botón para mostrar el componente
+                                            )
+                                        }
+                                    </div>
+                                                             
                             </li>
                             <li>
-                                <a href="/" class="">Actualizar</a>
+                                <a href="/" class="">actualizar</a>
                             </li>
                             <li>
                                 <a href="/" class="">Borrar</a>
