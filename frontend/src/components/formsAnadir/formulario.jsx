@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/formulario.css';
+import '../../styles/formStyles/formulario.css';
 // import FormMedia from './forms/formMedia';
 
 export default function Formulario(){

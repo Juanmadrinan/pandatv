@@ -32,13 +32,11 @@
 
 
 .divSearch li{
-  display: flex;
-  justify-content:left;
-  align-items:end;
-  margin: 10px;
+  background-color: #19181b;
+  color: #d6dcf1;
+  border: none;
+  font-size: 17px;
   border-radius: 10px;
-  background-color: #1f2a4b;
-  cursor: pointer; ;
 }
 
 

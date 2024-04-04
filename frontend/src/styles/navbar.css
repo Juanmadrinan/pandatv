@@ -73,4 +73,16 @@
     text-decoration: none;
 }
 
+.cajaUlAdministrador button{
+    border-radius: none;
+    border: none;
+    color: #d6dcf1;
+    background-color: #19181b;
+    grid-template-rows: auto auto;
+    font-size: 17px;
+    display: block;
+
+}
+
+
 
