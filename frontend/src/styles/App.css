@@ -1,10 +1,11 @@
-.principal{
-    display: flex;
+.App {
+    width: auto;
 }
 
 .divContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 52vh;
+    
 }

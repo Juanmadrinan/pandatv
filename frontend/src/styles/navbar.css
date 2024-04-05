@@ -1,7 +1,8 @@
 .divNavbar{
-    background-color: #19181b;
+    background-color: /*#19181b*/ red;
     width: 25vw;
-    height: 100vh;
+    height: 120vh;
+    max-height: 120%;
     display: flex;
 }
 
@@ -9,11 +10,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .divLogo img{
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -56,11 +56,10 @@
     text-align: center;
 }
 
-.navBar{
-    width: 100vw;
+.navBar {
+    width: 500px;
 }
-
-.details{
+.deltails{
     padding: 10px;
     margin: 10px;
     cursor: pointer;

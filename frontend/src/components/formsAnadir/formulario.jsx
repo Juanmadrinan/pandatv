@@ -2,11 +2,11 @@ import React from 'react';
 import '../../styles/formStyles/formulario.css';
 // import FormMedia from './forms/formMedia';
 
-export default function Formulario(){
+export default function Formulario({title}){
     return(
         <React.Fragment>
             <div className='divFormulario'>
-               <h1>Anadir Modulo</h1>
+               <h1>{title}</h1>
                 <form action="/submit-form" method="post">
                     <label for="opciones">Escoge el modulo:</label>
                     <select className='selectFormulario' name="opciones" id="opciones">

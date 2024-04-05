@@ -5,11 +5,12 @@ import '../styles/navbar.css'
 import Formulario from './formsAnadir/formulario'
 
 export default function Navbar() {
-    const [mostrarComponente, setMostrarComponente] = useState(false);
+    const [componenteActual, setComponenteActual] = useState(null);
 
-  const handleMostrarComponente = () => {
-    setMostrarComponente(true);
-  };
+    const mostrarFormulario = (formulario) => {
+        setComponenteActual(formulario);
+    }
+
   return (
     <div class="divNavbar">
         <nav class="navBar">
@@ -23,27 +24,26 @@ export default function Navbar() {
                             <a class="tituloLink" href="/">Administrador</a>
                         </summary>
                         <ul class="cajaUlAdministrador">
-                            <li>                               
-                                    <div class="button- add">
-                                        {mostrarComponente ? (
-                                            <Formulario /> // El componente se muestra si mostrarComponente es true
-                                            ) : 
-                                            (                                           
-                                                <button onClick={handleMostrarComponente}>
-                                                  Anadir
-                                                </button> // Botón para mostrar el componente
-                                            )
-                                        }
-                                    </div>
-                                                             
+                            <li>                   
+                                <a onClick={() => mostrarFormulario('Anadir')}>
+                                    Anadir
+                                </a>          
                             </li>
                             <li>
-                                <a href="/" class="">actualizar</a>
+                                <a onClick={() => mostrarFormulario('Actualizar')}>
+                                    Actualizar
+                                </a>
                             </li>
                             <li>
-                                <a href="/" class="">Borrar</a>
+                                <a onClick={() => mostrarFormulario('Borrar')}>
+                                    Borrar
+                                </a>
                             </li>
                         </ul>
+                        {componenteActual === 'Anadir' && <Formulario title="Añadir" />}
+                        {componenteActual === 'Actualizar' && <Formulario title="Actualizar" />}
+                        {componenteActual === 'Borrar' && <Formulario title="Borrar" />}
+
                     </details>
                 </div>
                 <div>

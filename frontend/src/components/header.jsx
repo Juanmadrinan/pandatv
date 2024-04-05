@@ -3,17 +3,15 @@ import "../styles/header.css";
 
 export default function Header(){ 
     return(
-       <div class="divHeader">
-            <div class="divUl">
-                <ul class="ulNavbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#peliculas">Peliculas</a></li>
-                    <li><a href="#series">Series</a></li>
+        <header class="header">
+            <nav class="nav">
+                <ul class="ul">
+                    <li class="li"><a href="#" class="item uno">Inicio</a></li>
+                    <li class="li"><a href="#" class="item uno">Peliculas</a></li>
+                    <li class="li"><a href="#" class="item uno">Series</a></li>
                 </ul>
-            </div>
-            <div class="divSearch">
-                <li><a href="#buscarPelis">Buscar Pelis</a></li>
-            </div>                  
-        </div>
+            </nav>
+            <input type="text" class="search" id="search-input" placeholder="Buscar películas..."></input>
+        </header>
     )
 }
