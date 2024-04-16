@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 export default function FormularioDirector() {
-    
   const [nombre, setNombre] = useState("");
   const [estado, setEstado] = useState("");
-  const [dateCreate, setDateCreate] = useState("");
-  const [dateUpdate, setDateUpdate] = useState("");
+  const [fechaCreacion, setFechaCreacion] = useState("");
+  const [fechaActualizacion, setFechaActualizacion] = useState("");
 
   const handleName = (event) => {
     setNombre(event.target.value);
@@ -13,27 +12,36 @@ export default function FormularioDirector() {
   const handleState = (event) => {
     setEstado(event.target.value);
   };
-  const handleDateCreate = (event) => {
-    setDateCreate(event.target.value);
+  const handlefechaCreacion = (event) => {
+    setFechaCreacion(event.target.value);
   };
-  const handleDateUpdate =(event) => {
-    setDateUpdate(event.target.value);
+  const handlefechaActualizacion = (event) => {
+    setFechaActualizacion(event.target.value);
   };
 
-    useEffect(() => {
-        
+  useEffect(() => {}, []);
 
-  }, []);
-  
-  const onsubmit = (event) => {
+  const onsubmit = async (event) => {
     event.preventDefault();
-    console.log(nombre, estado, dateCreate, dateUpdate);
-    const fetchData = async () => {
-      const res = await axios.get('http://localhost:/api/director5001');
-      console.log(res);
-    };
-    fetchData();
 
+    const data = {
+      nombre: nombre,
+      estado: estado,
+      fechaCreacion: fechaCreacion,
+      fechaActualizacion: fechaActualizacion,
+    };
+
+    const response = await fetch("http://localhost:5001/api/director", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      console.log("Director no fue creado con exito");
+    }
   };
 
   return (
@@ -60,15 +68,15 @@ export default function FormularioDirector() {
             type="date"
             name="date-create"
             placeholder="Fecha de Creacion"
-            value={dateCreate}
-            onChange={handleDateCreate}
+            value={fechaCreacion}
+            onChange={handlefechaCreacion}
           ></input>
           <input
             type="date"
             name="date-update"
             placeholder="Fecha Actualizacion"
-            value={dateUpdate}
-            onChange={handleDateUpdate}
+            value={fechaActualizacion}
+            onChange={handlefechaActualizacion}
           ></input>
           <button type="submit">Enviar Datos</button>
         </form>
@@ -88,8 +96,8 @@ export default function FormularioDirector() {
             <tr>
               <td>{nombre}</td>
               <td>{estado}</td>
-              <td>{dateCreate}</td>
-              <td>{dateUpdate}</td>
+              <td>{fechaCreacion}</td>
+              <td>{fechaActualizacion}</td>
             </tr>
           </tbody>
         </table>

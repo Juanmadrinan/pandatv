@@ -1,4 +1,5 @@
 const app = require('./app');
+const cors = require('cors');
 require('./db/db-connection-mongo');
 const tipoRoutes = require('./routes/tipoRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
@@ -14,7 +15,10 @@ async function main() {
 app.get('/', (req, res) => {
   res.send('Hola mundo!!!!!');
 })
+app.use(cors({
+  origin: 'http://localhost:4321',
 
+}))
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);
 app.use('/api/genre', genreRoutes);

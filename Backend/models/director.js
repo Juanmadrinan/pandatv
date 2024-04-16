@@ -9,7 +9,6 @@ const directorSchema = new mongoose.Schema({
     },
     estado: {
         type: String,
-        enum: ['Activo', 'Inactivo'],
         default: 'Activo'
     },
     // Fecha de creacion del director

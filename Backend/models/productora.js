@@ -10,7 +10,6 @@ const productoraSchema = new mongoose.Schema({
     // Estado de la productora 
     estado: {
         type: String,
-        enum: ['Activo', 'Inactivo'],
         default: 'Activo'
     },
     // Fecha de creación de la productora 

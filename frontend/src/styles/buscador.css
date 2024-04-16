@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    color: #1a1a1a;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  form {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    width: 27%;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #1a1a1a;
+    border-bottom-color: #ccc;
+    transition: .6s ease;
+
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #1a1a1a
+  }
+
+  ::placeholder {
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: start;
+  }
+  
+  button {
+    width: 10%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    color: #3164f4ff;
+    text-shadow: 0 0 1px #3164f4ff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    background: transparent;
+    border-radius: 6px;
+    transition: .6s ease;
+  }
+  
+  button:hover {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    background: #3164f4ff;
+  }
+  
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .movie-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .movie-card p {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para móviles */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 20px;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  
+    .movie-list {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+    .movie-card {
+      padding: 10px;
+    }
+  
+    .movie-card h2 {
+      font-size: 16px;
+    }
+  }

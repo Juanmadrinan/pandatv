@@ -10,7 +10,6 @@ const genreSchema = new mongoose.Schema({
     // Estado del género (Activo o Inactivo, con valor por defecto Activo)
     estado: {
         type: String,
-        enum: ['Activo', 'Inactivo'],
         default: 'Activo'
     },
     // Fecha de creación del género (se establece automáticamente al momento de la creación)
