@@ -7,8 +7,8 @@ const genreRoutes = require('./routes/genreRoutes');
 const directorRoutes = require('./routes/directorRoutes');
 
 async function main() {
-  await app.listen(4321);
-  console.log('Server on port 4321, Congratulations!');
+  await app.listen(5001);
+  console.log('Server on port 5001, Congratulations!');
 }
 
 app.get('/', (req, res) => {
