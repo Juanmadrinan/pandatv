@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function FormularioMedia() {
   const [tittle, setTittle] = useState("");
@@ -11,7 +11,7 @@ export default function FormularioMedia() {
   const [producer, setProducer] = useState("");
   const [type, setType] = useState("");
   const [createdIn, setCreatedIn] = useState("");
-  const [updateIn, setUpdateIn] = useState("");
+  const [updatedIn, setUpdatedIn] = useState("");
 
   const handleTittle = (event) => {
     setTittle(event.target.value);
@@ -44,109 +44,124 @@ export default function FormularioMedia() {
     setCreatedIn(event.target.value);
   };
   const handleUpdateIn = (event) => {
-    setUpdateIn(event.target.value);
+    setUpdatedIn(event.target.value);
   };
 
-  const onsubmit = (event) => {
+  const onsubmit = async (event) => {
     event.preventDefault();
-    console.log(
-      titulo,
-      sinopsis,
-      url,
-      imgmovie,
-      aniodeestreo,
-      genreprinci,
-      directorprinci,
-      productor,
-      tipo,
-      creadoen,
-      actualizadoen
-    );
+    const data = {
+      tittle : tittle,
+      sinopsis: sinopsis,
+      url: url,
+      imgMovie: imgMovie,
+      premierYear: premierYear,
+      genreMain: genreMain,
+      directorMain: directorMain,
+      producer: producer,
+      type: type,
+      createdIn: createdIn,
+      updatedIn: updatedIn,
+    }
+    
+    const response = await fecth("http://localhost:5001/api/media", {
+      method: "POST",
+      headers:{
+        "Content-Type": "aplication/json",
+      },
+      body: JSON.stringfy(data)
+    });
+
+    if (!response.ok){
+      console.log("Tipo Creado con exito");
+    }
+    console.log(data);
   };
+
 
   return (
     <React.Fragment>
       <div className="divFormularioMedia">
         <h1>Modulo Media</h1>
-        <form method="post" onSubmit={onSubmit}>
+        <form method="post" onSubmit={onsubmit}>
           <label for="opciones">completa los siguientes campos:</label>
           <input
             type="text"
             name="Tittle"
             placeholder="Ingresa el titulo"
             value={tittle}
-            onChange={setTittle}
+            onChange={handleTittle}
           ></input>
           <input
             type="text"
             name="sinopsis"
             placeholder="ingresar descripcion"
             value={sinopsis}
-            onChange={setSinopsis}
+            onChange={handleSinopsis}
           ></input>
           <input
             type="text"
             name="url"
             placeholder="ingresa el link de la peli"
             value={url}
-            onChange={setUrl}
+            onChange={handleUrl}
           ></input>
           <input
             type="url"
             name="img-movie"
             placeholder="ingresar la url de la imagen"
             value={imgMovie}
-            onChange={setImgMovie}
+            onChange={handleImgMovie}
           ></input>
           <input
             type="numb"
             name="premier-year"
             placeholder="ingresa el anio de estreno"
             value={premierYear}
-            onChange={setPremierYear}
+            onChange={handlePremierYear}
           ></input>
           <input
             type="text"
             name="genre-main"
             placeholder="Ingresa el genero principal"
             value={genreMain}
-            onChange={setGenreMain}
+            onChange={handleGenreMain}
           ></input>
           <input
             type="text"
             name="director-main"
             placeholder="ingresa el director de la peli"
             value={directorMain}
-            onChange={setDirectorMain}
+            onChange={handleDirectorMain}
           ></input>
           <input
             type="text"
             name="producer"
             placeholder="ingresa la productora de la peli"
             value={producer}
-            onChange={setProducer}
+            onChange={handleProducer}
           ></input>
           <input
             type="text"
             name="type"
             placeholder="ingresa el tipo de pelicula"
             value={type}
-            onChange={setType}
+            onChange={handleType}
           ></input>
           <input
             type="date"
             name="create-in"
             placeholder="ingresa la fecha de creacion de la peli"
-            value={createIn}
-            onChange={setCreateIn}
+            value={createdIn}
+            onChange={handleCreatedIn}
           ></input>
           <input
             type="date"
             name="updated-in"
             placeholder="ingresa la fecha de actualizacion"
-            value={updateIn}
-            onChange={setUpdateIn}
+            value={updatedIn}
+            onChange={handleUpdateIn}
           ></input>
+          <button type="submit">Agregar</button>
         </form>
       </div>
       <div>
@@ -178,8 +193,8 @@ export default function FormularioMedia() {
               <td>{directorMain}</td>
               <td>{producer}</td>
               <td>{type}</td>
-              <td>{createIn}</td>
-              <td>{updateIn}</td>
+              <td>{createted}</td>
+              <td>{updatedIn}</td>
             </tr>
           </tbody>
         </table>

@@ -1,34 +1,53 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function FormularioTipo() {
   const [nombre, setNombre] = useState("");
-  const [description, setDescription] = useState("");
-  const [dateCreate, setDateCreate] = useState("");
-  const [dateUpdate, setDateUpdate] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [fechaCreacion, setFechaCreacion] = useState("");
+  const [fechaActualizacion, setFechaActualizacion] = useState("");
 
   const handleName = (event) => {
     setNombre(event.target.value);
   };
   const handleDescription = (event) => {
-    setDescription(event.target.value);
+    setDescripcion(event.target.value);
   };
   const handleDateCreate = (event) => {
-    setDateCreate(event.target.value);
+    setFechaCreacion(event.target.value);
   };
   const handleDateUpdate = (event) => {
-    setDateUpdate(event.target.value);
+    setFechaActualizacion(event.target.value);
   };
 
-  const onsubmit = (event) => {
+  const onsubmit = async (event) => {
     event.preventDefault();
-    console.log(nombre, description, dateCreate, dateUpdate);
+
+    const data = {
+      nombre: nombre,
+      descripcion: descripcion,
+      fechaCreacion: fechaCreacion,
+      fechaActualizacion: fechaActualizacion,
+    }
+
+    const response = await fetch('http://localhost:5001/api/tipo', {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if(!response.ok) {
+      console.log('No fue creado un tipo')
+    }
+
   };
   
   return (
     <React.Fragment>
       <div className="divFormularioTipo">
         <h1>Modulo Tipo</h1>
-        <form method="post" onSubmit={onSubmit}>
+        <form method="post" onSubmit={onsubmit}>
           <label for="opciones">Completa los siguientes campos:</label>
           <input
             type="text"
@@ -39,25 +58,26 @@ export default function FormularioTipo() {
           ></input>
           <input
             type="text"
-            name="description"
+            name="descripcion"
             placeholder="ingresar descripcion"
-            value={description}
+            value={descripcion}
             onChange={handleDescription}
           ></input>
           <input
             type="date"
             name="date-create"
             placeholder="Fecha de Creacion"
-            value={dateCreate}
+            value={fechaCreacion}
             onChange={handleDateCreate}
           ></input>
           <input
             type="date"
             name="date-update"
             placeholder="Fecha Actualizacion"
-            value={dateUpdate}
+            value={fechaActualizacion}
             onChange={handleDateUpdate}
           ></input>
+          <button type="submit">enviar Datos</button>
         </form>
       </div>
       <div>
@@ -74,9 +94,9 @@ export default function FormularioTipo() {
           <tbody>
             <tr>
               <td>{nombre}</td>
-              <td>{estado}</td>
-              <td>{dateCreate}</td>
-              <td>{dateUpdate}</td>
+              <td>{descripcion}</td>
+              <td>{fechaCreacion}</td>
+              <td>{fechaActualizacion}</td>
             </tr>
           </tbody>
         </table>

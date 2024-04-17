@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import FormularioTipo from './formTipo';
-import FormularioMedia from './formMedia';
-import FormularioProductora from './formProductora';
-import FormularioDirector from './formDirector';
-import FormularioGenero from './formGenero';
-
-import '../../styles/formStyles/formulario.css';
+import FormularioTipo from './creacion/crearTipo';
+import FormularioMedia from './creacion/crearMedia';
+import FormularioProductora from './creacion/crearProductora';
+import FormularioDirector from './creacion/crearDirector';
+import FormularioGenero from './creacion/crearGenero';
+import '../styles/formulario.css';
 
 export default function Formulario({title}){
     const [formularioActual, setFormularioActual] = useState('');

@@ -25,7 +25,6 @@ transition: 0.2s;
 z-index: 10;
 border: transparent;
 border-radius: 30px;
-box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.6);
 background: rgba(33, 39, 56, 0.8);
 backdrop-filter: blur(10px);
 }

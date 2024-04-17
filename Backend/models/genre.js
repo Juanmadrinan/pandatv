@@ -12,6 +12,7 @@ const genreSchema = new mongoose.Schema({
         type: String,
         default: 'Activo'
     },
+    descripcion: String,
     // Fecha de creación del género (se establece automáticamente al momento de la creación)
     fechaCreacion: {
         type: Date,
@@ -23,7 +24,6 @@ const genreSchema = new mongoose.Schema({
         default: Date.now
     },
     // Esta es la descripción del género
-    descripcion: String
 });
 
 // Exportamos el modelo de género basandonos en el esquema que hicimos

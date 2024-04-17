@@ -1,6 +1,7 @@
 import { React } from "react";
 import { NavLink, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
+import FormularioCrear from "./components/formularioCrear";
 import CrearDirector from "./components/creacion/crearDirector";
 import "./styles/buscador.css";
 import SearchMovies from "./components/searchMovies";
@@ -12,12 +13,12 @@ function App() {
         <nav className="nav">
           <ul className="ul">
           <li className="li">
-              <NavLink to={'/api/director'} className="link-animation">
+              <NavLink to={"/"} className="link-animation">
                 Home
               </NavLink>
             </li>
             <li className="li">
-              <NavLink to={'/api/director'} className="link-animation">
+              <NavLink to={'/crear'} className="link-animation">
                 Creación
               </NavLink>
             </li>
@@ -29,9 +30,10 @@ function App() {
           </ul>
         </nav>    
       </header>
-      <SearchMovies />
+
       <Routes>
-        <Route path="/api/director" Component={CrearDirector}/>  
+        <Route path="/" Component={SearchMovies}/>
+        <Route path="/crear" Component={FormularioCrear}/>
       </Routes>
     </div>
   );

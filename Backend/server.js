@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 })
 app.use(cors({
   origin: 'http://localhost:4321',
-
 }))
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);

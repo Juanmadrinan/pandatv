@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function FormularioGenero() {
   const [nombre, setNombre] = useState("");
-  const [description, setDescription] = useState("");
-  const [dateCreate, setDateCreate] = useState("");
-  const [dateUpdate, setDateUpdate] = useState("");
-  const [State, setState] = useState("");
+  const [descripcion, setDescription] = useState("");
+  const [fechaCreacion, setFechaCreacion] = useState("");
+  const [fechaActualizacion, setFechaActualizacion] = useState("");
+  const [estado, setEstado] = useState("");
 
   const handleName = (event) => {
     setNombre(event.target.value);
@@ -13,19 +13,39 @@ export default function FormularioGenero() {
   const handleDescription = (event) => {
     setDescription(event.target.value);
   };
-  const handleDateCreate = (event) => {
-    setDateCreate(event.target.value);
+  const handlefechaCreacion = (event) => {
+    setFechaCreacion(event.target.value);
   };
-  const handleDateUpdate = (event) => {
-    setDateUpdate(event.target.value);
+  const handlefechaActualizacion = (event) => {
+    setFechaActualizacion(event.target.value);
   };
-  const handleState = (event) => {
-    setState(event.target.value);
+  const handleestado = (event) => {
+    setEstado(event.target.value);
   };
 
-  const onsubmit = (event) => {
+  const onsubmit = async (event) => {
     event.preventDefault();
-    console.log(nombre, description, dateCreate, dateUpdate, State);
+
+    const data = {
+      nombre: nombre,
+      descripcion: descripcion,
+      fechaCreacion: fechaCreacion,
+      fechaActualizacion: fechaActualizacion,
+      estado: estado,
+    }
+
+    const response = await fetch("http://localhost:5001/api/genre", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    });
+
+    if(!response.ok){
+      console.log("Genero no fue creado con exito");
+    }
+    console.log(data);
   };
 
   return (
@@ -43,31 +63,31 @@ export default function FormularioGenero() {
           ></input>
           <input
             type="text"
-            name="description"
+            name="descripcion"
             placeholder="ingresar descripcion"
-            value={description}
+            value={descripcion}
             onChange={handleDescription}
           ></input>
           <input
             type="date"
             name="date-create"
             placeholder="Fecha de Creacion"
-            value={dateCreate}
-            onChange={handleDateCreate}
+            value={fechaCreacion}
+            onChange={handlefechaCreacion}
           ></input>
           <input
             type="date"
             name="date-update"
             placeholder="Fecha Actualizacion"
-            value={dateUpdate}
-            onChange={handleDateUpdate}
+            value={fechaActualizacion}
+            onChange={handlefechaActualizacion}
           ></input>
           <input
             type="text"
-            name="state"
+            name="estado"
             placeholder="ingresa el estado"
-            value={State}
-            onChange={State}
+            value={estado}
+            onChange={handleestado}
           ></input>
           <button type="submit">enviar Datos</button>
         </form>
@@ -87,10 +107,10 @@ export default function FormularioGenero() {
           <tbody>
             <tr>
               <td>{nombre}</td>
-              <td>{description}</td>
-              <td>{dateCreate}</td>
-              <td>{dateUpdate}</td>
-              <td>{State}</td>
+              <td>{descripcion}</td>
+              <td>{fechaCreacion}</td>
+              <td>{fechaActualizacion}</td>
+              <td>{estado}</td>
             </tr>
           </tbody>
         </table>
