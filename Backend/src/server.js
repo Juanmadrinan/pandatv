@@ -15,6 +15,7 @@ async function main() {
 app.get('/', (req, res) => {
   res.send('Hola mundo!!!!!');
 })
+
 app.use(cors({
   origin: 'http://localhost:4321',
 }))
