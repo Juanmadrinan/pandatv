@@ -13,9 +13,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 16px;
     border: transparent;
-    background-color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
 }
 
@@ -42,6 +43,7 @@ body {
     font-weight: 500;
     text-align: start;
     padding: 4px;
+    background: transparent;
     border: 1px solid #1a1a1a;
     border-radius: 6px
 }
@@ -59,7 +61,7 @@ body {
     font-size: 16px;
 }
 
-/* Container - Formulario Productora */
+/*Container - Form Productora */
 .divformularioProductora {
     width: 105%;
     height: auto;
@@ -95,24 +97,31 @@ body {
     font-size: 16px;
     font-weight: 500;
     text-align: start;
+    background: transparent
 }
 
 .divformularioProductora form button {
-    color: #fff;
-    width: 20%;
-    padding: 13px;
+    color: #1a1a1a;
+    width: 25%;
+    padding: 10px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background: #3164f4ff;
-    border: transparent;
+    background: transparent;
+    border: 1px solid #1a1a1a;
     border-radius: 6px;
+    transition: .6s ease;
+}
+
+.divformularioProductora form button:hover {
+    color: #fff;
+    background: #1a1a1a;
 }
 
 /* Linea */
 .line {
     width: 80%;
-    height: 1.6px;
+    height: 1.9px;
     background: #ccc;
     border-radius: 20px;
 }
@@ -143,27 +152,27 @@ body {
 }
 
 .container-table th {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     padding: 15px;
-    background: rgba(33, 39, 56, 0.8);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:nth-child(even) {
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:nth-child(odd) {
-    background-color: #ccc;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:hover {
-    background-color: #ddd;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/*Container - Form Director */
+/* Container - Formulario Productora */
 .divformularioDirector {
     width: 105%;
     height: auto;
@@ -203,8 +212,8 @@ body {
 
 .divformularioDirector form button {
     color: #fff;
-    width: 25%;
-    padding: 10px;
+    width: 20%;
+    padding: 13px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -220,7 +229,7 @@ body {
     background: #ccc;
     border-radius: 20px;
 }
-/* Table - Formulario Director */
+/* Table - Formulario Productora */
 .table h1 {
     margin-top: 10px;
 }
@@ -511,24 +520,31 @@ body {
     font-size: 16px;
     font-weight: 500;
     text-align: start;
+    background: transparent
 }
 
 .divFormularioMedia form button {
-    color: #fff;
+    color: #1a1a1a;
     width: 25%;
     padding: 10px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background: #3164f4ff;
-    border: transparent;
+    background: transparent;
+    border: 1px solid #1a1a1a;
     border-radius: 6px;
+    transition: .6s ease;
+}
+
+.divFormularioMedia form button:hover {
+    color: #fff;
+    background: #1a1a1a;
 }
 
 /* Linea */
 .line {
     width: 80%;
-    height: 1.6px;
+    height: 1.9px;
     background: #ccc;
     border-radius: 20px;
 }
@@ -559,22 +575,22 @@ body {
 }
 
 .container-table th {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     padding: 15px;
-    background: rgba(33, 39, 56, 0.8);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:nth-child(even) {
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:nth-child(odd) {
-    background-color: #ccc;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container-table tbody tr:hover {
-    background-color: #ddd;
+    background: rgba(255, 255, 255, 0.2);
 }

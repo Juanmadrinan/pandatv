@@ -98,28 +98,28 @@ export default function FormularioMedia() {
           <input
             type="text"
             name="sinopsis"
-            placeholder="ingresar descripcion"
+            placeholder="Ingresar descripcion"
             value={sinopsis}
             onChange={handleSinopsis}
           ></input>
           <input
             type="text"
             name="url"
-            placeholder="ingresa el link de la peli"
+            placeholder="Ingresa el link de la pelicula"
             value={url}
             onChange={handleUrl}
           ></input>
           <input
             type="text"
             name="imagenPelicula"
-            placeholder="ingresar la url de la imagen"
+            placeholder="Ingresar la url de la imagen"
             value={imagenPelicula}
             onChange={handleImagenPelicula}
           ></input>
           <input
             type="text"
             name="anioEstreno"
-            placeholder="ingresa el anio de estreno"
+            placeholder="Ingresa el anio de estreno"
             value={anioEstreno}
             onChange={handleAnioEstreno}
           ></input>
@@ -133,35 +133,35 @@ export default function FormularioMedia() {
           <input
             type="text"
             name="directorPrincipal"
-            placeholder="ingresa el director de la peli"
+            placeholder="Ingresa el director de la peli"
             value={directorPrincipal}
             onChange={handleDirectorPrincipal}
           ></input>
           <input
             type="text"
             name="productora"
-            placeholder="ingresa la productora de la peli"
+            placeholder="Ingresa la productora de la peli"
             value={productora}
             onChange={handleProductora}
           ></input>
           <input
             type="text"
             name="tipo"
-            placeholder="ingresa el tipo de pelicula"
+            placeholder="Ingresa el tipo de pelicula"
             value={tipo}
             onChange={handleTipo}
           ></input>
           <input
             type="date"
             name="creado-En"
-            placeholder="ingresa la fecha de creacion de la peli"
+            placeholder="Ingresa la fecha de creacion de la peli"
             value={creadoEn}
             onChange={handleCreadoEn}
           ></input>
           <input
             type="date"
             name="actualizado-En"
-            placeholder="ingresa la fecha de actualizacion"
+            placeholder="Ingresa la fecha de actualizacion"
             value={actualizadoEn}
             onChange={handleActualizadoEn}
           ></input>

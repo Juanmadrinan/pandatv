@@ -64,7 +64,7 @@ export default function FormularioGenero() {
           <input
             type="text"
             name="descripcion"
-            placeholder="ingresar descripcion"
+            placeholder="Ingresar descripcion"
             value={descripcion}
             onChange={handleDescription}
           ></input>
@@ -85,7 +85,7 @@ export default function FormularioGenero() {
           <input
             type="text"
             name="estado"
-            placeholder="ingresa el estado"
+            placeholder="Ingresa el estado"
             value={estado}
             onChange={handleestado}
           ></input>

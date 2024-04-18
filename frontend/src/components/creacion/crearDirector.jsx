@@ -60,7 +60,7 @@ export default function FormularioDirector() {
           <input
             type="text"
             name="estado"
-            placeholder="ingresar el estado"
+            placeholder="Ingresar el estado"
             value={estado}
             onChange={handleState}
           ></input>

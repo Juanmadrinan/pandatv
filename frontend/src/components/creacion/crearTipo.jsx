@@ -59,7 +59,7 @@ export default function FormularioTipo() {
           <input
             type="text"
             name="descripcion"
-            placeholder="ingresar descripcion"
+            placeholder="Ingresar descripcion"
             value={descripcion}
             onChange={handleDescription}
           ></input>
