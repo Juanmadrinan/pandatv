@@ -6,18 +6,22 @@
 }
 
 body {
-  background: #EDF2EF;
   display: flex;
   flex-direction: column;
+  background-image: url("https://th.bing.com/th/id/R.57b5fd24fe22b4aa000bf3b2f2c4b76c?rik=EBIJEVWRhaXtDw&riu=http%3a%2f%2fwww.concursoinfra.cl%2fwp-content%2fuploads%2f2018%2f12%2fbackground-que-son-los-proyectos.png&ehk=Yu9GkZf7bKSJ5M51VfbdY1v2vJn%2fDdoOVXwYBNazapI%3d&risl=&pid=ImgRaw&r=0");
+  background-size: auto;
+
 }
+
 
 /* HEADER */
 header {
-position: fixed;
+position: absolute;
 font-size: 16px;
 top: 2%;
 left: 25.5%;
 width: 48%;
+height: 50px;
 display: flex;
 padding: 30px;
 justify-content: center;
@@ -25,11 +29,12 @@ transition: 0.2s;
 z-index: 10;
 border: transparent;
 border-radius: 30px;
-background: rgba(33, 39, 56, 0.8);
-backdrop-filter: blur(10px);
+background: rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(255px);
 }
 
 nav {
+
 display: flex;
 justify-content: center;
 align-items: center;
@@ -54,10 +59,10 @@ header ul li a {
   margin: 0 16px;
   text-decoration: none;
   justify-content: center;
-  color: #EDF2EF;
+  color: #1a1a1a;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 400px;
   font-size: 19px;
   font-family: 'Poppins', sans-serif;
   transition: .6s ease;

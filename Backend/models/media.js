@@ -1,46 +1,46 @@
 const mongoose = require('mongoose');
 
 const mediaSchema = new mongoose.Schema({
-    tittle: {
+    title: {
         type: String,
     },
-    sipnosis: {
+    sinopsis: {
         type: String,
     }, 
     url: {
         type: String,
     },
-    imgMovie: {
+    imagenPelicula: {
         type: String
     },
-    premierYear: {
+    anioEstreno: {
         type: String,
     },
-    genreMain: {
+    generoPrincipal: {
         // type: mongoose.Schema.Types.ObjectId,
         type: String,
         ref: 'Genre',
     },
-    directorMain: {
+    directorPrincipal: {
         // type: mongoose.Schema.Types.ObjectId,
         type: String,
         ref: 'Director',
     },
-    producer: {
+    productora: {
         // type: mongoose.Schema.type.ObjectId,
         type: String,
         ref: 'Productora',
     },
-    type: {
+    tipo: {
         // type: mongoose.Types.ObjectId,
         type: String,
         ref: 'Tipo',
     },
-    createdIn: {
+    creadoEn: {
         type: Date,
         default: Date.now
     },
-    updatedIn: {
+    actualizadoEn: {
         type: Date,
         default: Date.now
     }

@@ -92,9 +92,10 @@ export default function FormularioGenero() {
           <button type="submit">enviar Datos</button>
         </form>
       </div>
+      <div className="line"></div>
       <div>
         <h1>Genero</h1>
-        <table>
+        <table className="container-table">
           <thead>
             <tr>
               <th>Nombre</th>

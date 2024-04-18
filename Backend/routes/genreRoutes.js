@@ -6,7 +6,7 @@ const genreController = require('../controllers/genreController');
 router.get('/', genreController.getAllGenres);
 router.get('/:id', genreController.getGenreById);
 router.post('/', genreController.addGenre);
-router.patch('/:id', genreController.updateGenre);
+router.put('/:id', genreController.updateGenre);
 router.delete('/:id', genreController.deleteGenre);
 
 

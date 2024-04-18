@@ -48,7 +48,7 @@ export default function FormularioTipo() {
       <div className="divFormularioTipo">
         <h1>Modulo Tipo</h1>
         <form method="post" onSubmit={onsubmit}>
-          <label for="opciones">Completa los siguientes campos:</label>
+          <label for="opciones">Por favor, llene todos los campos</label>
           <input
             type="text"
             name="nombre"
@@ -80,13 +80,14 @@ export default function FormularioTipo() {
           <button type="submit">enviar Datos</button>
         </form>
       </div>
+      <div className="line"></div>
       <div>
-        <h1>Director</h1>
-        <table>
+        <h1>tipo</h1>
+        <table className="container-table">
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Estado</th>
+              <th>descripcion</th>
               <th>Fecha de Creacion</th>
               <th>Fecha de Actualizacion</th>
             </tr>

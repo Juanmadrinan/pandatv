@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function FormularioMedia() {
+export default function EdicionMedia() {
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [sinopsis, setSinopsis] = useState("");
   const [url, setUrl] = useState("");
@@ -49,9 +51,9 @@ export default function FormularioMedia() {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    
+
     const data = {
-      title : title,
+      title: title,
       sinopsis: sinopsis,
       url: url,
       imagenPelicula: imagenPelicula,
@@ -63,29 +65,23 @@ export default function FormularioMedia() {
       creadoEn: creadoEn,
       actualizadoEn: actualizadoEn,
     };
-    
-    try{
-      const response = await fetch("http://localhost:5001/api/media", {
-        method: "POST",
-        headers:{
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
 
-      if (!response.ok){
-        console.log("Tipo Creado con exito");
-     };
-    } catch (error) {
-      console.log('Error en la solicitud:', error);
+    const response = await fetch(`http://localhost:5001/api/media/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      console.log("Tipo Creado con exito");
     }
   };
-
 
   return (
     <React.Fragment>
       <div className="divFormularioMedia">
-        <h1>Modulo Media</h1>
+        <h1>Edicion de Media</h1>
         <form method="post" onSubmit={onsubmit}>
           <label for="opciones">Por favor, llene todos los campos</label>
           <input
@@ -168,9 +164,7 @@ export default function FormularioMedia() {
           <button type="submit">Agregar</button>
         </form>
       </div>
-      <div className="line"></div>
-      <div>
-        <h1>Media</h1>
+      <div className="line">
         <table className="container-table">
           <thead>
             <tr>

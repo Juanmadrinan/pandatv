@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function FormularioDirector() {
+export default function EdicionGerero() {
+  const { id } = useParams();
   const [nombre, setNombre] = useState("");
-  const [estado, setEstado] = useState("");
+  const [descripcion, setDescription] = useState("");
   const [fechaCreacion, setFechaCreacion] = useState("");
   const [fechaActualizacion, setFechaActualizacion] = useState("");
+  const [estado, setEstado] = useState("");
 
   const handleName = (event) => {
     setNombre(event.target.value);
   };
-  const handleState = (event) => {
-    setEstado(event.target.value);
+  const handleDescription = (event) => {
+    setDescription(event.target.value);
   };
   const handlefechaCreacion = (event) => {
     setFechaCreacion(event.target.value);
@@ -18,21 +22,23 @@ export default function FormularioDirector() {
   const handlefechaActualizacion = (event) => {
     setFechaActualizacion(event.target.value);
   };
-
-  useEffect(() => {}, []);
+  const handleestado = (event) => {
+    setEstado(event.target.value);
+  };
 
   const onsubmit = async (event) => {
     event.preventDefault();
 
     const data = {
       nombre: nombre,
-      estado: estado,
+      descripcion: descripcion,
       fechaCreacion: fechaCreacion,
       fechaActualizacion: fechaActualizacion,
+      estado: estado,
     };
 
-    const response = await fetch("http://localhost:5001/api/director", {
-      method: "POST",
+    const response = await fetch(`http://localhost:5001/api/genre/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -40,29 +46,30 @@ export default function FormularioDirector() {
     });
 
     if (!response.ok) {
-      console.log("Director no fue creado con exito");
+      console.log("Genero no fue creado con exito");
     }
+    console.log(data);
   };
 
   return (
     <React.Fragment>
-      <div className="divformularioDirector">
-        <h1>Modulo Director</h1>
+      <div className="divFormularioGenero">
+        <h1>Modulo Genero</h1>
         <form method="post" onSubmit={onsubmit}>
-          <label for="opciones">Por favor, llene todos los campos</label>
+          <label for="opciones">completa los siguientes campos:</label>
           <input
             type="text"
             name="nombre"
-            placeholder="Ingresa el nombre"
+            placeholder="Ingresa tu nombre"
             value={nombre}
             onChange={handleName}
           ></input>
           <input
             type="text"
-            name="estado"
-            placeholder="ingresar el estado"
-            value={estado}
-            onChange={handleState}
+            name="descripcion"
+            placeholder="ingresar descripcion"
+            value={descripcion}
+            onChange={handleDescription}
           ></input>
           <input
             type="date"
@@ -78,27 +85,36 @@ export default function FormularioDirector() {
             value={fechaActualizacion}
             onChange={handlefechaActualizacion}
           ></input>
-          <button type="submit">Enviar Datos</button>
+          <input
+            type="text"
+            name="estado"
+            placeholder="ingresa el estado"
+            value={estado}
+            onChange={handleestado}
+          ></input>
+          <button type="submit">enviar Datos</button>
         </form>
       </div>
       <div className="line"></div>
       <div>
-        <h1>Director</h1>
+        <h1>Genero</h1>
         <table className="container-table">
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Estado</th>
+              <th>Descripcion</th>
               <th>Fecha de Creacion</th>
               <th>Fecha de Actualizacion</th>
+              <th>Estado</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{nombre}</td>
-              <td>{estado}</td>
+              <td>{descripcion}</td>
               <td>{fechaCreacion}</td>
               <td>{fechaActualizacion}</td>
+              <td>{estado}</td>
             </tr>
           </tbody>
         </table>

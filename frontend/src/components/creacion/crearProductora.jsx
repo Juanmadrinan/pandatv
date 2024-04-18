@@ -64,10 +64,10 @@ export default function FormularioProductora() {
 
   return (
     <React.Fragment>
-      <div className="divFormularioProductora">
+      <div className="divformularioProductora">
         <h1>Modulo Productora</h1>
         <form method="post" onSubmit={onsubmit}>
-          <label for="opciones">completa los siguientes campos:</label>
+          <label for="opciones">Por favor, llene todos los campos</label>
           <input
             type="text"
             name="Slogan"
@@ -85,7 +85,7 @@ export default function FormularioProductora() {
           <input
             type="text"
             name="description"
-            placeholder="ingresar descripcion"
+            placeholder="Ingresar descripcion"
             value={descripcion}
             onChange={handleDescripcion}
           ></input>
@@ -106,16 +106,17 @@ export default function FormularioProductora() {
           <input
             type="text"
             name="state"
-            placeholder="ingresa el estado"
+            placeholder="Ingresa el estado"
             value={estado}
             onChange={handleEstado}
           ></input>
-          <button type="submit">enviar Datos</button>
+          <button type="submit">Enviar Datos</button>
         </form>
       </div>
-      <div>
+      <div className="line"></div>
+      <div className="table">
         <h1>Productora</h1>
-        <table>
+        <table className="container-table">
           <thead>
             <tr>
               <th>Slogan</th>

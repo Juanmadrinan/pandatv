@@ -7,7 +7,7 @@ const tipoController = require('../controllers/tipoController');
 router.get('/', tipoController.getAllTipos);
 router.get('/:id', tipoController.getTipoById);
 router.post('/', tipoController.addTipo);
-router.patch('/:id', tipoController.updateTipo);
+router.put('/:id', tipoController.updateTipo);
 router.delete('/:id', tipoController.deleteTipo);
 
 

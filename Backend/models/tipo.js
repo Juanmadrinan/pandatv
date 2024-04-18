@@ -10,6 +10,7 @@ const tipoSchema = new mongoose.Schema({
     },
     // Fecha de creación del tipo
     descripcion: String,
+    
     fechaCreacion: {
         type: Date,
         default: Date.now,

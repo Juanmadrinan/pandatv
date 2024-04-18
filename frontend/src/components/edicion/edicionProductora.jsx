@@ -1,93 +1,116 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function FormularioDirector() {
+export default function EdicionProductora() {
+  const { id } = useParams();
+  const [slogan, setSlogan] = useState("");
   const [nombre, setNombre] = useState("");
-  const [estado, setEstado] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const [fechaCreacion, setFechaCreacion] = useState("");
   const [fechaActualizacion, setFechaActualizacion] = useState("");
+  const [estado, setEstado] = useState("");
 
-  const handleName = (event) => {
+  const handleSlogan = (event) => {
+    setSlogan(event.target.value);
+  };
+  const handleNombre = (event) => {
     setNombre(event.target.value);
   };
-  const handleState = (event) => {
-    setEstado(event.target.value);
+  const handleDescripcion = (event) => {
+    setDescripcion(event.target.value);
   };
-  const handlefechaCreacion = (event) => {
+  const handleFechaCreacion = (event) => {
     setFechaCreacion(event.target.value);
   };
-  const handlefechaActualizacion = (event) => {
+  const handleFechaActualizacion = (event) => {
     setFechaActualizacion(event.target.value);
   };
+  const handleEstado = (event) => {
+    setEstado(event.target.value);
+  };
 
-  useEffect(() => {}, []);
-
+  // En esta función manejamos el envío del formulario
   const onsubmit = async (event) => {
     event.preventDefault();
-
+    // Creamos el objeto de datos que enviaremos al servidor
     const data = {
+      slogan: slogan,
       nombre: nombre,
-      estado: estado,
+      descripcion: descripcion,
       fechaCreacion: fechaCreacion,
       fechaActualizacion: fechaActualizacion,
+      estado: estado,
     };
 
-    const response = await fetch("http://localhost:5001/api/director", {
-      method: "POST",
+    const response = await fetch(`http://localhost:5001/api/productora/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
-
-    if (!response.ok) {
-      console.log("Director no fue creado con exito");
-    }
+    
   };
-
   return (
     <React.Fragment>
-      <div className="divformularioDirector">
-        <h1>Modulo Director</h1>
+      <div className="divformularioProductora">
+        <h1>Edicion de Productora</h1>
         <form method="post" onSubmit={onsubmit}>
           <label for="opciones">Por favor, llene todos los campos</label>
+          <input
+            type="text"
+            name="Slogan"
+            placeholder="Ingresa el Slogan"
+            value={slogan}
+            onChange={handleSlogan}
+          ></input>
           <input
             type="text"
             name="nombre"
             placeholder="Ingresa el nombre"
             value={nombre}
-            onChange={handleName}
+            onChange={handleNombre}
           ></input>
           <input
             type="text"
-            name="estado"
-            placeholder="ingresar el estado"
+            name="description"
+            placeholder="Ingresar descripcion"
+            value={descripcion}
+            onChange={handleDescripcion}
+          ></input>
+          <input
+            type="text"
+            name="state"
+            placeholder="Ingresa el estado"
             value={estado}
-            onChange={handleState}
+            onChange={handleEstado}
           ></input>
           <input
             type="date"
             name="date-create"
             placeholder="Fecha de Creacion"
             value={fechaCreacion}
-            onChange={handlefechaCreacion}
+            onChange={handleFechaCreacion}
           ></input>
           <input
             type="date"
             name="date-update"
             placeholder="Fecha Actualizacion"
             value={fechaActualizacion}
-            onChange={handlefechaActualizacion}
+            onChange={handleFechaActualizacion}
           ></input>
           <button type="submit">Enviar Datos</button>
         </form>
       </div>
       <div className="line"></div>
-      <div>
-        <h1>Director</h1>
+      <div className="table">
+        <h1>Productora</h1>
         <table className="container-table">
           <thead>
             <tr>
+              <th>Slogan</th>
               <th>Nombre</th>
+              <th>Descripcion</th>
               <th>Estado</th>
               <th>Fecha de Creacion</th>
               <th>Fecha de Actualizacion</th>
@@ -95,7 +118,9 @@ export default function FormularioDirector() {
           </thead>
           <tbody>
             <tr>
+              <td>{slogan}</td>
               <td>{nombre}</td>
+              <td>{descripcion}</td>
               <td>{estado}</td>
               <td>{fechaCreacion}</td>
               <td>{fechaActualizacion}</td>
