@@ -77,7 +77,7 @@ export default function FormularioTipo() {
             value={fechaActualizacion}
             onChange={handleDateUpdate}
           ></input>
-          <button type="submit">enviar Datos</button>
+          <button type="submit">Enviar Datos</button>
         </form>
       </div>
       <div className="line"></div>

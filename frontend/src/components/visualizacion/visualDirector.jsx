@@ -36,7 +36,7 @@ export default function VisualDirector() {
   return (
     <div>
       <h1>Visualización de Directores</h1>
-      <table>
+      <table className="director-table">
         <thead>
           <tr>
             <th>Nombre</th>

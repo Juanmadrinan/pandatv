@@ -35,7 +35,7 @@ export default function VisualMedia() {
   return (
     <div>
       <h1>Visualizacion de Media</h1>
-      <table>
+      <table className="director-table">
         <thead>
           <tr>
             <th>titulo</th>

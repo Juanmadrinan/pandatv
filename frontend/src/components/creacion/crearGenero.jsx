@@ -89,7 +89,7 @@ export default function FormularioGenero() {
             value={estado}
             onChange={handleestado}
           ></input>
-          <button type="submit">enviar Datos</button>
+          <button type="submit">Enviar Datos</button>
         </form>
       </div>
       <div className="line"></div>

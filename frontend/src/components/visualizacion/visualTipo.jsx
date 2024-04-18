@@ -36,7 +36,7 @@ export default function VisualTipo() {
   return (
     <div>
       <h1>Visualizacion de Tipo</h1>
-      <table>
+      <table className="director-table">
         <thead>
             <tr>
               <th>Nombre</th>

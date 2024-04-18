@@ -36,7 +36,7 @@ export default function VisualProductora() {
   return (
     <div>
     <h1>Visualización de Productora</h1>
-    <table>
+    <table className="director-table">
         <thead>
             <tr>
                 <th>Nombre</th>

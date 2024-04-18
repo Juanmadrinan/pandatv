@@ -66,7 +66,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     text-align: center;
-    background: #f4f4f4;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 6px;
     transition: .6s ease;
   }

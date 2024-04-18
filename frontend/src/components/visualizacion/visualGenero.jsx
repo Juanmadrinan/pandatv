@@ -37,7 +37,7 @@ export default function VisualGenero() {
     return (
         <div>
             <h1>Visualización de Generos</h1>
-            <table>
+            <table className="director-table">
                 <thead>
                     <tr>
                         <th>Nombre</th>

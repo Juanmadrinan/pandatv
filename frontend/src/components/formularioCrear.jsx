@@ -44,7 +44,7 @@ export default function Formulario({title}){
             <div className='divFormulario'>
                <h1>{title}</h1>
                 <form action="/submit-form" method="post">
-                    <label for="opciones">Escoge el modulo:</label>
+                    <label className="label" for="opciones">Escoge el modulo:</label>
                     <select className='selectFormulario' name="opciones" id="opciones" value={formularioActual} onChange={handleSelect}>
                         <option value="">No seleccionar</option>
                         <option value="Media">Media</option>

@@ -39,7 +39,7 @@ export default function FormularioVisualizar() {
     <>
       <div className="divFormulario">
         <h1>Visualización</h1>
-          <label for="opciones">Escoge el modulo:</label>
+          <label for="opciones">Escoge el modulo</label>
           <select value={formularioActual} onChange={handleSelect}>
             <option value="ninguno">No seleccionar</option>
             <option value="director">Director</option>
